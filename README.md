@@ -82,5 +82,5 @@ LiquidGlassify generates a hidden SVG filter in the document body. It uses sever
 
 ## License & Copyright
 
-© 2026 Zied Khechine.
+© 2026 Zied Khechine
 This project is licensed under the **MIT License**.
