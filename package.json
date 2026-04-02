@@ -4,6 +4,13 @@
 	"type": "module",
 	"author": "Zied Khechine",
 	"description": "A high-performance liquid glass backdrop filter library.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ziedkhechin/liquid-glassify"
+	},
+	"publishConfig": {
+		"provenance": true
+	},
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
