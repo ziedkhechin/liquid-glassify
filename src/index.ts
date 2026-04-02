@@ -1,7 +1,5 @@
 /**
- * LiquidGlassify
- *
- * A high-performance TypeScript library for creating dynamic "Liquid Glass" effects.
+ * LiquidGlassify, a high-performance TypeScript library for creating dynamic "Liquid Glass" effects.
  * It utilizes SVG displacement maps and CSS backdrop-filters to simulate realistic glass refraction and light dispersion.
  *
  * @example
@@ -129,7 +127,7 @@ export default class LiquidGlassify<HTML_ELEMENT_TYPE extends HTMLElement = HTML
 		} else if (element instanceof HTMLElement) {
 			_element = element;
 		}
-		if (!_element) {
+		if (!_element?.parentElement) {
 			return null;
 		}
 
@@ -326,7 +324,7 @@ export default class LiquidGlassify<HTML_ELEMENT_TYPE extends HTMLElement = HTML
 				}
 			}
 		});
-		this.element.parentNode && this.mutationObserver.observe(this.element.parentNode, { childList: true, });
+		this.mutationObserver.observe(this.element.parentNode as ParentNode, { childList: true, });
 
 		this.resizeObserver?.disconnect();
 
