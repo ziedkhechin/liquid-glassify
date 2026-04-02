@@ -174,7 +174,11 @@ export default class LiquidGlassify<HTML_ELEMENT_TYPE extends HTMLElement = HTML
 			// the liquid glass feature only works on Chromium-based desktop browsers
 			!this.svg && this.appendSvg();
 
-			return this.subscribeToChanges(() => this.renderLiquidGlass(_options));
+			return this.subscribeToChanges(() => {
+				_options.width = parseInt(computedStyle.width, 10);
+				_options.height = parseInt(computedStyle.height, 10);
+				this.renderLiquidGlass(_options);
+			});
 		} else {
 			return this.renderFallbackEffect(_options);
 		}
